@@ -62,7 +62,31 @@ public class Sorter {
         System.out.println("Bubble sort times:" + times);
     }
 
-    public void quickSort(Integer[] numbers) {
-        
+    public void runQuickSort(Integer[] numbers){
+        quickSort(numbers, 0, numbers.length-1);
+        System.out.println(Arrays.toString(numbers));
+    }
+
+    public void quickSort(Integer[] numbers, int low, int high) {
+        if(low >= high) {return;}
+        int index = partition(numbers, low, high);
+        quickSort(numbers, low, index-1);
+        quickSort(numbers, index+1, high);
+    }
+
+    private int partition(Integer[] numbers, int low, int high) {
+        int key = numbers[low];
+        while (low < high){
+            while (numbers[high] > key && low < high){
+                high--;
+            }
+            numbers[low] = numbers[high];
+            while (numbers[low] < key && low < high){
+                low++;
+            }
+            numbers[high] = numbers[low];
+        }
+        numbers[high] = key;
+        return high;
     }
 }
