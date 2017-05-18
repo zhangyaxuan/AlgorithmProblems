@@ -1,7 +1,5 @@
 package com.problems;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -11,6 +9,10 @@ public class Main {
         sorter.selectionSort(new Integer[]{6, 9, 2, 0, 1, 8, 5, 4, 7, 3});
         sorter.insertionSort(new Integer[]{6, 9, 2, 0, 1, 8, 5, 4, 7, 3});
         sorter.runQuickSort(new Integer[]{6, 9, 2, 0, 1, 8, 5, 4, 7, 3});
+
+        Fibonacci fib = new Fibonacci();
+        fib.bySimpleMethod(10);
+        fib.byRecursion(10);
     }
 
 
