@@ -41,13 +41,13 @@ public class ProblemsTest {
     public void shouldReverseInteger(){
         int origin1 = 123;
         int origin2 = -123;
-//        int origin3 = 1000000003;
+        int origin3 = 1000000003;
         int reversed1 = problems.reverseInteger(origin1);
         int reversed2 = problems.reverseInteger(origin2);
-//        int reversed3 = problems.reverseInteger(origin3);
+        int reversed3 = problems.reverseInteger(origin3);
         assertThat(reversed1, is(321));
         assertThat(reversed2, is(-321));
-//        assertThat(reversed3, is(0));
+        assertThat(reversed3, is(0));
     }
 
 }

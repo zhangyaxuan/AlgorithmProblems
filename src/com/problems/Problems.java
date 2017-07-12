@@ -98,17 +98,14 @@ public class Problems {
     }
 
     public int reverseInteger(int x) {
-        boolean isNagtive = (x < 0);
-        String xStr = String.valueOf(Math.abs(x));
-        Stack<Character> stack = new Stack<>();
-        for(int i=0; i< xStr.length(); i++){
-            stack.push(xStr.charAt(i));
+        long reversed = 0;
+        while (x != 0){
+            reversed = reversed * 10 + x%10;
+            x = x/10;
         }
-        String reversedStr = "";
-        while (!stack.empty()){
-            reversedStr += stack.pop();
+        if(reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE){
+            return 0;
         }
-        int reversed = isNagtive ? (0-Integer.valueOf(reversedStr)) : Integer.valueOf(reversedStr);
-        return reversed;
+        return (int)reversed;
     }
 }
